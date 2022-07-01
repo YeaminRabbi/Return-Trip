@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "2baea4ab-de52-44dc-a984-22a32865819d",
+		"name": "Return Trip",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21736896"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Jaria",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Tanha",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "tanha@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				},
+				"description": "User Registration in the system"
+			},
+			"response": []
+		},
+		{
+			"name": "Login and Bearer Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"yeaminrabbi308@gmail.com\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login session with bearer token"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Page",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dYpI1ChOB0uawMCZty21KiFjBdXH3wSRmyp0u81b0gUjps9wck",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_name",
+							"value": "TechArtist\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/page/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"page",
+						"create"
+					]
+				},
+				"description": "Adding page from a authorized user"
+			},
+			"response": []
+		},
+		{
+			"name": "Following User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dYpI1ChOB0uawMCZty21KiFjBdXH3wSRmyp0u81b0gUjps9wck",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/follow/person/140",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"follow",
+						"person",
+						"140"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Following Page",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dYpI1ChOB0uawMCZty21KiFjBdXH3wSRmyp0u81b0gUjps9wck",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/follow/page/6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"follow",
+						"page",
+						"6"
+					]
+				},
+				"description": "Authorized User following a page"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dYpI1ChOB0uawMCZty21KiFjBdXH3wSRmyp0u81b0gUjps9wck",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post_content\":\"I went for a world Tour\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/person/attach-post",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"person",
+						"attach-post"
+					]
+				},
+				"description": "Authorized user creating a post"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Page Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dYpI1ChOB0uawMCZty21KiFjBdXH3wSRmyp0u81b0gUjps9wck",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post_content\": \"Page is for Web Development\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/page/5/attach-post",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"page",
+						"5",
+						"attach-post"
+					]
+				},
+				"description": "Creating Post From a page"
+			},
+			"response": []
+		},
+		{
+			"name": "User Feed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "dYpI1ChOB0uawMCZty21KiFjBdXH3wSRmyp0u81b0gUjps9wck",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/person/feed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"person",
+						"feed"
+					]
+				},
+				"description": "User Feed"
+			},
+			"response": []
+		}
+	]
+}
